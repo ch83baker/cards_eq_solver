@@ -28,7 +28,7 @@ subset_1suit_1eq_probs = {
     'long': [0 for j in range(14)]
 }
 for short_long_choice in {'short', 'long'}:
-    in_path = Path(f'./results/single_{short_long_choice}.txt')
+    in_path = Path(f'../results/single_{short_long_choice}.txt')
     with open(in_path, 'r') as reader:
         lines = reader.readlines()
     if lines[0] != 'single\n' or lines[1] != short_long_choice + '\n':
@@ -54,7 +54,7 @@ for short_long_mix in ('short_short', 'short_long', 'long_long'):
     # I happened to run the non-'alt' version for all cases
     # If you are running this code, feel free to try both alt and non-alt
     # versions.
-    in_path = Path(f'./results/single_2eq_{short_long_mix}.txt')
+    in_path = Path(f'../results/single_2eq_{short_long_mix}.txt')
     with open(in_path, 'r+') as reader:
         lines = reader.readlines()
     if lines[0] != 'single\n' or lines[1] != short_long_mix + '\n':
@@ -78,7 +78,7 @@ for short_long_mix in ('long_short_short', 'long_long_short'):
     # I happened to run the non-'alt' version for all cases
     # If you are running this code, feel free to try both alt and non-alt
     # versions.
-    in_path = Path(f'./results/single_3eq_{short_long_mix}.txt')
+    in_path = Path(f'../results/single_3eq_{short_long_mix}.txt')
     with open(in_path, 'r+') as reader:
         lines = reader.readlines()
     if lines[0] != 'single\n' or lines[1] != short_long_mix + '\n':

@@ -13,7 +13,7 @@ import time
 with cross-references as needed.'''
 # deck_type options: 'single', 'sample', 'like_sample', 'full_sample',
 # 'opp', 'three', 'full'
-deck_type = 'opp'  # see line 41
+deck_type = 'single'  # see line 41
 # short_long_mix options: 'short_short', 'short_long', 'long_short',
 # 'long_long'
 # in practice, long_short has slightly better performance than short_long

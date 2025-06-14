@@ -13,10 +13,10 @@ from time import time
 with cross-references as needed.'''
 # deck_type options: 'single', 'sample', 'like_sample', 'full_sample',
 # 'opp', 'three', 'full'
-deck_type = 'opp'  # see line 39
+deck_type = 'single'  # see line 39
 # short_long_mix options: 'short_short', 'short_long', 'long_short',
 # 'long_long'
-short_long_mix = 'short_long'  # see line 62
+short_long_mix = 'short_short'  # see line 62
 # is_timing options: True, False
 is_timing = True  # see line 212
 

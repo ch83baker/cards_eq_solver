@@ -10,7 +10,7 @@ import csv
 '''All options set here, for convenience.
 Will cross-reference with start of their relevance below.'''
 # deck_type options: 'single', 'sample', 'like', 'opp', 'three', 'full'
-deck_type = 'three'  # see line 30 and following
+deck_type = 'single'  # see line 30 and following
 # short_or_long options: 'short', 'long'
 short_or_long = 'long'  # see line 55 and following
 

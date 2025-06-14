@@ -12,9 +12,9 @@ import csv
 '''All options listed here for convenience.
 Docstrings will note where they come back into play.'''
 # deck_type options: 'single', 'sample', 'like', 'opp', 'three', 'full'
-deck_type = 'like'  # see line 34 and following
+deck_type = 'single'  # see line 34 and following
 # short_or_long options: 'short', 'long'
-short_or_long = 'short'  # see line 58 and following
+short_or_long = 'long'  # see line 58 and following
 # is_timing options: True, False
 is_timing = True  # see line 241 and following
 

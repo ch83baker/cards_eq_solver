@@ -26,7 +26,7 @@ for short_long_mix in ('short_short', 'long_short', 'long_long'):
     # I happened to run the 'alt' version for all cases
     # If you are running this code, feel free to try both alt and non-alt
     # versions.
-    in_path = Path(f'./results/{grouping}_2eq_{short_long_mix}_alt.txt')
+    in_path = Path(f'../results/{grouping}_2eq_{short_long_mix}_alt.txt')
     with open(in_path, 'r+') as reader:
         lines = reader.readlines()
     if lines[0] != grouping + '\n' or lines[1] != short_long_mix + '\n':
