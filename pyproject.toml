@@ -1,0 +1,11 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cards_eq_solver"
+version = "0.2"
+dependencies = ["sympy"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["eq_solver_classes", "subset_graph_classes", "card_solver_scripts"]
