@@ -4,6 +4,14 @@ from pathlib import Path
 
 
 def local_file_printer(filename_in):
+    """
+    Print the results from a single file.
+
+    Parameters
+    ------------
+    filename_in: string
+        the name of the file you wish to print.
+    """
     in_path = Path(filename_in)
     with open(in_path, 'r+') as reader:
         lines = reader.readlines()
@@ -32,6 +40,20 @@ def local_file_printer(filename_in):
 
 
 def print_multiple_results(deck_type, deck_count, filenames_list):
+    """
+    Print multiple results for a given deck type.
+
+    Parameters
+    ------------
+    deck_type: string
+        The standard name of the deck you are using.
+        See the scripts in "card_solver_scripts"
+        for the standards here.
+    deck_count: int (positive)
+        The number of cards in the deck.
+    filename_in: string
+        The name of the file you wish to print.
+    """
     num_files = len(filenames_list)
     results_megalist = [[] for j in range(num_files)]
     equation_mixes = []
