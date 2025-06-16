@@ -21,7 +21,7 @@ if you split your work across several cores, it is more-or-less impossible to ge
 
 ## License:
 
-GNU General Public License, version 3.  For more information, see [`License.md`](/LICENSE.md)
+GNU General Public License, version 3.  For more information, see [`LICENSE.md`](/LICENSE.md)
 
 ## Installation Instructions (One Method)
 
@@ -37,7 +37,7 @@ or
 (replacing 'python' with 'py' on Windows systems as appropriate).  
 You should also be able to run individual scripts from a command-line or interactive interface in the usual way.
 
-**Warning**  Note that the multiprocessing scripts (mostly the ones in the `card_solver_scripts` subfolder) *must* be run
+**Warning:**  Note that the multiprocessing scripts (mostly the ones in the `card_solver_scripts` subfolder) *must* be run
 in non-interactive interfaces.
 
 ## Brief Notes on Strategy:
@@ -56,25 +56,25 @@ That said, `sympy` can be slow.  Hence, we divided the task into three parts:
 
 ## Contents:
 
-* The ``eq_solver_classes` package, containing solvers for solving 1 or 2 arbitrary equations with symbolic inputs from any (multi)set of inputs.  See `SingleEqChecker` and its subclasses (in `single_eq.py`) and `DoubleEqChecker` and its
+* The `eq_solver_classes` package, containing solvers for solving 1 or 2 arbitrary equations with symbolic inputs from any (multi)set of inputs.  See `SingleEqChecker` and its subclasses (in `single_eq.py`) and `DoubleEqChecker` and its
 subclasses (in `double_eq.py`).  
 (The generalization is clear to code, but if there are at least 20 elements in a set,
 it would take a great deal of time to finish.)
 
-* The ``subset_graph_classes`` package, containing some general classes for creating (various slices of) the graph of subsets of a given set (where edges are given by inclusion), and
+* The `subset_graph_classes` package, containing some general classes for creating (various slices of) the graph of subsets of a given set (where edges are given by inclusion), and
 propogating up various upward-closed properties of said subsets, given an initial list of satisfactory subsets.  (Used here because supersets of a solution set are solution sets.)  See `my_subset_graph_new_py` and `my_subset_graph_again.py`.
 **Warning:** A 26-element set's full graph of subsets made a 32 GB RAM system choke, and even the trimmed version (one cardinality
-size at a time) takes 14-20 GB of RAM plus an unknown amount of virtual memory.  This enables some speedup on the problems, but at the
+size at a time) takes 13.5 GB of RAM plus an unknown amount of virtual memory.  This enables some speedup on the problems, but at the
 cost of a lot of space.  Once the basic solutions are determined, it may well be superior to switch to C++ or somesuch for this part
 of the problem.
 
 * The first part of the `card_solver_scripts` pacakge, containing some multiprocessing hacks to speed up the special cases helpful
 for the problem at hand, with a limited amount of configuration
 options available at the beginning of each script.  Cannot be run in interactive mode, and requires a multi-core CPU to actually
-access multiprocessing.  See: `single_eq_multiprocess_starter.py` and `single_eq_multiprocess_finisher.py`, and the analogues for `double` and `triple`.  (See also `double_eq_finisher_alt.py` for the alternative strategy of modeling subgraphs.)
+access multiprocessing.  See: `single_eq_multiprocess_starter.py` and `single_eq_multiprocess_finisher.py`, and the analogues for `double` and `triple`.  (See also `double_eq_finisher_alt.py` for the alternative strategy of modeling subgraphs.)  
 **Advice on the current limits of computation:**
     * For single-equation problems, using one or two suits (13-26 cards) is no issue.  For three suits (39 cards) and a small `a + b = c` problem,
-    the basic solutions are not too hard, but this had to be done *without* multiprocessing, as my simplistic approach has too much overhead.  Hence, it took 1-2 days on a single core to get only out to 10-element subsets.
+    the basic solutions are not too hard, but the superset-search had to be done *without* multiprocessing, as my simplistic approach has too much overhead.  It took 1-2 days on a single core to get only out to 10-element subsets.
     * For double-equation problems, using one suit is easy, and two suits is just about at the edge of acceptable computation time
     outside a supercomputer, taking about a week to handle all cases.
     * For three-equation problems, single-suit solutions took just under an hour, but by scaling the problem size, two-suit solutions would take weeks to months with the current setup.
