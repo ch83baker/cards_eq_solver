@@ -21,7 +21,7 @@ if you split your work across several cores, it is more-or-less impossible to ge
 
 ## License:
 
-GNU General Public License, version 3.  For more information, see [`LICENSE.md`](/LICENSE.md)
+GNU General Public License, version 3.  For more information, see [`LICENSE.txt`](/LICENSE.txt)
 
 ## Installation Instructions (One Method)
 
@@ -73,7 +73,7 @@ for the problem at hand, with a limited amount of configuration
 options available at the beginning of each script.  Cannot be run in interactive mode, and requires a multi-core CPU to actually
 access multiprocessing.  See: `single_eq_multiprocess_starter.py` and `single_eq_multiprocess_finisher.py`, and the analogues for `double` and `triple`.  (See also `double_eq_finisher_alt.py` for the alternative strategy of modeling subgraphs.)  
 **Advice on the current limits of computation:**
-    * For single-equation problems, using one or two suits (13-26 cards) is no issue.  For three suits (39 cards) and a small `a + b = c` problem,
+    * For single-equation problems, using one or two suits (13-26 cards) is no issue.  For three suits (39 cards) and a 'long' `a + b + c = d` problem,
     the basic solutions are not too hard, but the superset-search had to be done *without* multiprocessing, as my simplistic approach has too much overhead.  It took 1-2 days on a single core to get only out to 10-element subsets.
     * For double-equation problems, using one suit is easy, and two suits is just about at the edge of acceptable computation time
     outside a supercomputer, taking about a week to handle all cases.
